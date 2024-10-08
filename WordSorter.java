@@ -1,3 +1,5 @@
+//Evan J Gniadek the purpose of this code is to review my knowledge of java for programming
+
 import java.io.File;
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -145,4 +147,4 @@ public class WordSorter
 			sortedList.remove( sortedList.indexOf(theWord));
 		System.out.println("The word was removed"); 
 		}// remove the word
-}
+}//End of public class 
