@@ -62,6 +62,7 @@ public class WordSorter
 					break;
 				case 4:
 					System.out.println("What word are you looking for?");
+					strIn.nextLine();
 					String whatWord = strIn.nextLine();
 					if(WordSorter.isInArticle(whatWord))
 						System.out.println("its in there!");
@@ -70,6 +71,7 @@ public class WordSorter
 					break;
 				case 5:
 					System.out.println("What word do you want to delete");
+					strIn.nextLine();
 					String deleteWord = strIn.nextLine();
 					WordSorter.delete(deleteWord);
 				
@@ -124,12 +126,12 @@ public class WordSorter
 				WordSorter.printList(alpha.charAt(0));
 				WordSorter.printAll(alpha.substring(1));
 			}//end of if
-			else
+			if(sortedList.size() < 1)
 				System.out.println("This article... Is empty!");
 		}//end of printAll
 		
 		public static void wordCount (){
-			System.out.println(sortedList.size());
+			System.out.println("the word count is" + sortedList.size());
 		}
 		
 		public static Boolean isInArticle (String theWord){
@@ -143,8 +145,8 @@ public class WordSorter
 		public static void delete (String theWord){
 			if(!WordSorter.isInArticle(theWord))
 				System.out.println("Word does not exist");
-			
-			sortedList.remove( sortedList.indexOf(theWord));
-		System.out.println("The word was removed"); 
+			else
+				sortedList.remove(sortedList.indexOf(theWord));
+				System.out.println("The word was removed"); 
 		}// remove the word
 }//End of public class 
